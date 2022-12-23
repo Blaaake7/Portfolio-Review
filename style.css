@@ -29,6 +29,9 @@
 
     /* Size */
     --size-border-radius: 4px;
+
+    /* Animation */
+    --animation-duration: 300ms;
   }
 
   /* box-sizing */
@@ -90,12 +93,14 @@
     margin: 4px 0;
   }
 
+  /* Navbar */
+
   #navbar {
     display: flex;
     justify-content: space-between;
     background-color: #c2d6b6;
     align-items: center;
-    padding: 12px;
+    padding: 15px;
   }
 
   .navbar__name {
@@ -115,7 +120,7 @@
   }
 
   .navbar__menu__item {
-    padding: 8px 10px;
+    padding: 12px 10px;
     margin: 0px 5px;
     list-style-type: none;
     color: var(--color-white);
@@ -131,6 +136,15 @@
   .navbar__menu__item:hover {
     background-color: #273f63;
   }
+
+  .section {
+    text-align: center;
+    padding: 50px;
+    max-width: 1200;
+    margin: auto;
+  }
+
+  /* Home */
 
   #home {
     background: url('imgs/Portfollio\ -\ background.png') center/cover no-repeat;
@@ -162,4 +176,72 @@
     height: 250px;
     border-radius: 50%;
     border: var(--color-white) solid 2px;
+  }
+
+  /* About */
+
+  #about {
+    margin: 0 30px;
+  }
+
+  .about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+  }
+
+  .about__icon:hover i {
+    color: #273f63;
+    transform: rotate(30deg) scale(1.2);
+    transition: all var(--animation-duration) ease;
+  }
+
+  .about__icon {
+    width: 170px;
+    height: 170px;
+    font-size: 100px;
+    line-height: 170px;
+    border: var(--color-blue) solid 2px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    color: var(--color-blue);
+  }
+
+  .about__skills__title, .about__skills__description {
+    color: var(--color-grey);
+  }
+
+  .about__skills__description {
+    font-size: var(--font-small);
+  }
+
+  .about__description {
+    padding: 24px 12px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .career {
+    display: flex;
+    align-items: center;
+  }
+
+  .career__logo {
+    width: 90px;
+    height: 90px;
+    padding: 8px;
+  }
+
+  .career__name {
+    font-size: var(--font-small);
+  }
+
+  .career__period {
+    font-size: var(--font-micro);
+  }
+
+  .career__description {
+    padding: 0 20px;
+    text-align: left;
+    color: var(--color-light-grey);
   }
