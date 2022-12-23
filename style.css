@@ -136,12 +136,16 @@
   .navbar__menu__item:hover {
     background-color: #273f63;
   }
+  
+  .section__container {
+    max-width: 1200px;
+    margin: auto;
+  }
 
   .section {
+    margin: auto;
     text-align: center;
     padding: 50px;
-    max-width: 1200;
-    margin: auto;
   }
 
   /* Home */
@@ -182,6 +186,7 @@
 
   #about {
     margin: 0 30px;
+    margin: auto;
   }
 
   .about__majors {
@@ -244,4 +249,59 @@
     padding: 0 20px;
     text-align: left;
     color: var(--color-light-grey);
+  }
+
+  /* Skill */
+
+  #skills {
+    background-color: var(--color-yellow);
+  }
+
+  .skillset {
+    display: flex;
+    color: var(--color-light-white);
+    background-color: var(--color-light-grey);
+    margin: 20px 0;
+  }
+  
+  .skillset__title {
+    color: var(--color-light-white);
+  }
+
+  .skill__description {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .skillset__left {
+    background-color: var(--color-dark-grey);
+    flex-basis: 60%;
+    padding: 20px 40px;
+  }
+
+  .skill__bar {
+    flex-basis: 100%;
+    height: 3px;
+    background-color: var(--color-light-grey);
+  }
+
+  .skill__value {
+    background-color: var(--color-orange);
+    height: 3px;
+ }
+
+  .skill {
+    margin-bottom: 32px; 
+ }
+
+  .skillset__right {
+    flex-basis: 40%;
+  }
+
+  .tools {
+    background-color: var(--color-grey);
+  }
+
+  .tools, .etc {
+    padding: 20px;
   }
