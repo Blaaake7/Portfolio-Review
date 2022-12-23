@@ -52,6 +52,13 @@
     padding-left: 0;
     list-style-type: none;
   }
+
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
   
   /* Typography */
   
@@ -86,9 +93,9 @@
   #navbar {
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-blue);
+    background-color: #c2d6b6;
     align-items: center;
-    padding: 16px;
+    padding: 12px;
   }
 
   .navbar__name {
@@ -125,10 +132,34 @@
     background-color: #273f63;
   }
 
+  #home {
+    background: url('imgs/Portfollio\ -\ background.png') center/cover no-repeat;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .home__description {
+    margin: 20px 0px;
+  }
+
+  .home__title, .home__description {
+    color: var(--color-dark-white);
+  }
+
+  .home__contact {
+    margin: 10px 0px;
+    padding: 6px 6px;
+    font-size: var(--font-regular);
+    background-color: transparent;
+    color: var(--color-dark-white);
+    border: var(--color-dark-white) solid 3px;
+    border-radius: var(--size-border-radius);
+    font-weight: var(--weight-bold);
+  }
+
   .home__avatar {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
+    border: var(--color-white) solid 2px;
   }
