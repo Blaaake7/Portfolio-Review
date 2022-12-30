@@ -10,8 +10,9 @@ document.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('navbar--dark');
     }
+    // remove toggle button when scrolling
+    navbarMenu.classList.remove('open');
 });
-
 
 // Handle scrolling when tapping the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -22,7 +23,14 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollTo(link);
+});
+
+// navbar toggle button
+const navbarArrowBtn = document.querySelector('.navbar__toggle-btn');
+navbarArrowBtn.addEventListener('click',() => {
+    navbarMenu.classList.toggle('open');
 });
 
 // Home contact button
@@ -69,20 +77,30 @@ const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 
-workBtnContainer.addEventListener('click', (event) => {
-    const filter = event.target.dataset.filter ||
-     event.target.parentNode.dataset.filter;
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter ||
+    e.target.parentNode.dataset.filter;
 
-     if(filter == null) {
+    if(filter == null) {
         return;
-     } 
-    projects.forEach((project) => {
-        if(filter === '*' || filter=== project.dataset.type) {
-            project.classList.remove('invisible');
-        } else {
-            project.classList.add('invisible');
-        }
-    });
+    } 
+
+    //remove previous selection and select new one
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : 
+                    e.target.parentNode;
+    target.classList.add('selected');
     
-    console.log(filter);
+    projectContainer.classList.add('anim-out');
+    setTimeout(() => {
+        projects.forEach((project) => {
+            if(filter === '*' || filter=== project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
 });

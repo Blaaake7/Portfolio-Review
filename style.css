@@ -127,6 +127,7 @@
   .navbar__menu {
     display: flex;
     justify-content: space-around;
+    margin: 6px;
   }
 
   .navbar__menu__item {
@@ -135,16 +136,13 @@
     list-style-type: none;
     color: var(--color-black);
     cursor: pointer;
+    border: 2px solid transparent;
     border-radius: var(--size-border-radius);
   }
 
-  .navbar__menu__item.active {
-    border: 1px solid var(--color-black);
-    border-radius: 4px;
-  }
-
   .navbar__menu__item:hover {
-    background-color: #273f63;
+    border-color: var(--color-black);
+    background-color: #558751;
   }
 
   .navbar__toggle-btn {
@@ -168,6 +166,7 @@
     margin: auto;
     text-align: center;
     padding: 50px;
+    padding-top: 62px;
   }
 
   /* Home */
@@ -346,13 +345,13 @@
     margin: 40px;
   }
 
-  .category__btn.active,
+  .category__btn.selected,
   .category__btn:hover {
     background-color: var(--color-blue);
     color: var(--color-white);
   }
 
-  .category__btn.active .categories__count,
+  .category__btn.selected .categories__count,
   .category__btn:hover .categories__count {
     opacity: 1;
     top: 0px;
@@ -421,6 +420,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 1;
+    transition: all var(--animation-duration) ease-in;
+  }
+
+  .work__projects.anim-out {
+    opacity: 0;
+    transform: scale(0.95) translateY(40px);
   }
 
   /* Testimonials */
@@ -516,6 +522,11 @@
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+        background-color: #a6bfaa;
+    }
+
+    .section {
+      padding: 16px;
     }
 
     .navbar__menu {
@@ -525,9 +536,24 @@
         display: none;
     }
 
+  .navbar__menu.open {
+    display: block;
+  }
+
     .about__majors {
         flex-direction: column;
-        
+    }
+    
+    .testimonial__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .testimonial__avatar {
+      margin-bottom: 8px;
+      margin-right: 0;
+      margin-left: 0;
     }
 
     .major {
@@ -536,6 +562,11 @@
 
     .about__icon {
         margin: auto;
+    }
+
+    .category__btn {
+      width: 100%;
+      margin: 4px 0;
     }
     
     .skillset {
