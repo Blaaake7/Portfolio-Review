@@ -136,8 +136,11 @@
     list-style-type: none;
     color: var(--color-black);
     cursor: pointer;
-    border: 2px solid transparent;
     border-radius: var(--size-border-radius);
+  }
+
+  .navbar__menu__item.active {
+    border: 2px solid black;
   }
 
   .navbar__menu__item:hover {
